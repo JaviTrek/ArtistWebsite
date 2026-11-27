@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paintings and drawings | Maria Bossert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="banner" style="height: clamp(8rem, 18vw, 12rem);">
+    <h1 class="banner-title">Paintings &amp; drawings</h1>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <!-- Profile: to use a real photo, replace the <svg> with <img src="images/maria.jpg" alt="Maria Bossert"> -->
+      <div class="profile">
+        <div class="avatar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4.2"/><path d="M3.5 22c0-5 3.8-8 8.5-8s8.5 3 8.5 8z"/></svg>
+        </div>
+        <p class="profile-name">Maria Bossert</p>
+      </div>
+      <nav aria-label="Main">
+        <a href="index.html#about">About</a>
+        <a href="index.html#research">Research portfolio</a>
+        <a href="index.html#education">Education &amp; experience</a>
+        <a href="index.html#awards">Awards, honors &amp; fellowships</a>
+        <a href="index.html#mentorship">Mentorship &amp; teaching</a>
+        <a href="index.html#links">Contact &amp; links</a>
+        <span class="group">Studio</span>
+        <a href="art.html" class="active">Paintings &amp; drawings</a>
+        <a href="photography.html">Photography</a>
+      </nav>
+    </aside>
+
+    <main class="content wide">
+      <!-- Each <figure> is one artwork. Click an image to enlarge it. -->
+      <div class="gallery">
+        <figure><a href="images/Adobe+Express+-+file+(1).webp"><img src="images/Adobe+Express+-+file+(1).webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+        <figure><a href="images/Canyon+Falls.compressed.webp"><img src="images/Canyon+Falls.compressed.webp" alt="Canyon Falls" loading="lazy"></a><figcaption>Canyon Falls</figcaption></figure>
+        <figure><a href="images/Cardinal+Notecard+Scan+(1).webp"><img src="images/Cardinal+Notecard+Scan+(1).webp" alt="Cardinal notecard" loading="lazy"></a><figcaption>Cardinal notecard</figcaption></figure>
+        <figure><a href="images/FedExScan2024-11-01_11-07-47.webp"><img src="images/FedExScan2024-11-01_11-07-47.webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+        <figure><a href="images/FedExScan2024-11-01_11-11-11.webp"><img src="images/FedExScan2024-11-01_11-11-11.webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+        <figure><a href="images/FedExScan2024-12-04_11-28-31.webp"><img src="images/FedExScan2024-12-04_11-28-31.webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+        <figure><a href="images/image.webp"><img src="images/image.webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+        <figure><a href="images/image-asset%20(1).webp"><img src="images/image-asset%20(1).webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+        <figure><a href="images/image-asset%20(2).webp"><img src="images/image-asset%20(2).webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+        <figure><a href="images/image-asset.webp"><img src="images/image-asset.webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+        <figure><a href="images/MB_002_trees+(1).webp"><img src="images/MB_002_trees+(1).webp" alt="Trees" loading="lazy"></a><figcaption>Trees</figcaption></figure>
+        <figure><a href="images/MB_treetrunk+(2).webp"><img src="images/MB_treetrunk+(2).webp" alt="Tree trunk" loading="lazy"></a><figcaption>Tree trunk</figcaption></figure>
+        <figure><a href="images/MBO_001_final+copy(1).webp"><img src="images/MBO_001_final+copy(1).webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+        <figure><a href="images/Rainbow+mtn.webp"><img src="images/Rainbow+mtn.webp" alt="Rainbow Mountain" loading="lazy"></a><figcaption>Rainbow Mountain</figcaption></figure>
+        <figure><a href="images/Rocks.webp"><img src="images/Rocks.webp" alt="Rocks" loading="lazy"></a><figcaption>Rocks</figcaption></figure>
+        <figure><a href="images/Untitled+design+(1).webp"><img src="images/Untitled+design+(1).webp" alt="Artwork by Maria Bossert (describe the image)" loading="lazy"></a><figcaption>Title, medium, year</figcaption></figure>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="lightbox">
+    <img alt="">
+    <p id="lightbox-caption"></p>
+  </dialog>
+  <script>
+    // Click an artwork to enlarge it. The image glides from its spot in the
+    // gallery to the big view and back. Browsers without that feature just fade.
+    const box = document.getElementById('lightbox');
+    const big = box.querySelector('img');
+    const caption = document.getElementById('lightbox-caption');
+    let current = null;
+
+    function transition(change) {
+      if (document.startViewTransition) return document.startViewTransition(change);
+      change();
+      return { finished: Promise.resolve() };
+    }
+
+    function openArt(link) {
+      current = link.querySelector('img');
+      big.src = link.href;
+      big.alt = current.alt;
+      caption.textContent = link.closest('figure').querySelector('figcaption').textContent;
+      current.style.viewTransitionName = 'art';
+      transition(() => {
+        current.style.viewTransitionName = '';
+        big.style.viewTransitionName = 'art';
+        box.showModal();
+      });
+    }
+
+    function closeArt() {
+      transition(() => {
+        big.style.viewTransitionName = '';
+        current.style.viewTransitionName = 'art';
+        box.close();
+      }).finished.finally(() => { current.style.viewTransitionName = ''; });
+    }
+
+    document.querySelectorAll('.gallery a').forEach(link =>
+      link.addEventListener('click', e => { e.preventDefault(); openArt(link); }));
+    box.addEventListener('click', closeArt);
+    box.addEventListener('cancel', e => { e.preventDefault(); closeArt(); }); // Esc key
+  </script>
+
+</body>
+</html>
